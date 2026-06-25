@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股点金手 · 股票提及追踪</title>
+<meta name="description" content="追踪 @agudianjinshou 在X平台推荐的A股股票，按提及频次排行">
+<style>
+:root{--bg:#0f1117;--card:#1a1d27;--bd:#2a2d38;--tx:#e1e4ed;--t2:#8b8fa3;--red:#ef4444;--green:#22c55e;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh}
+.container{max-width:960px;margin:0 auto;padding:20px 24px}
+.header{text-align:center;padding:40px 0 32px}
+.header h1{font-size:28px;font-weight:800;color:var(--tx)}
+.header .sub{font-size:14px;color:var(--t2);margin-top:4px}
+.header .handle{color:var(--red);font-weight:500}
+.stats{display:flex;justify-content:center;gap:32px;margin:24px 0 32px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat .val{font-size:28px;font-weight:800;color:var(--red)}
+.stat .lbl{font-size:12px;color:var(--t2);margin-top:2px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;overflow:hidden;margin-bottom:20px}
+.card-hd{padding:16px 20px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between}
+.card-hd h2{font-size:16px;font-weight:600}
+.card-bd{padding:16px 20px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:10px 12px;font-size:11px;color:var(--t2);font-weight:500;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--bd)}
+td{padding:10px 12px;font-size:14px;border-bottom:1px solid #1f2233}
+tr:hover td{background:#1f2233}
+.rank{display:inline-flex;width:24px;height:24px;border-radius:6px;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.rank.r1{background:var(--red);color:#fff}
+.rank.r2{background:#f97316;color:#fff}
+.rank.r3{background:#eab308;color:#1a1a1a}
+.rank.r{background:#252836;color:var(--t2)}
+.sname{color:var(--tx);text-decoration:none;font-weight:600;transition:color .2s}
+.sname:hover{color:var(--red)}
+.code{font-size:11px;color:var(--t2);font-family:'SF Mono',Monaco,Consolas,monospace}
+.code.na{color:#444}
+.cnt{font-weight:700;color:var(--red);font-size:15px}
+.unit{font-size:11px;color:var(--t2);margin-left:2px;font-weight:400}
+.last{font-size:12px;color:var(--t2)}
+.post-item{display:block;padding:12px 0;border-bottom:1px solid var(--bd);text-decoration:none;transition:background .15s}
+.post-item:hover{background:#1f2233;margin:0 -16px;padding:12px 16px;border-radius:6px}
+.post-item:last-child{border-bottom:none}
+.post-date{font-size:12px;color:var(--t2)}
+.post-title{display:block;margin-top:4px;color:var(--tx);font-size:14px;line-height:1.5}
+.post-meta{font-size:11px;color:var(--t2);margin-top:4px}
+.footer{text-align:center;padding:32px 0;color:var(--t2);font-size:12px}
+.footer a{color:var(--t2)}
+.footer .update{color:var(--green)}
+@media(max-width:640px){.container{padding:12px}.stats{gap:20px}.stat .val{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+    <h1>A股点金手 <span class="handle">@agudianjinshou</span></h1>
+    <div class="sub">X平台 · 股票提及频次追踪</div>
+</div>
+
+<div class="stats">
+    <div class="stat"><div class="val">1566</div><div class="lbl">总条目</div></div>
+    <div class="stat"><div class="val">450</div><div class="lbl">原创帖子</div></div>
+    <div class="stat"><div class="val">137</div><div class="lbl">涉及股票</div></div>
+    <div class="stat"><div class="val">1116</div><div class="lbl">回复数</div></div>
+</div>
+
+<div class="card">
+    <div class="card-hd"><h2>🏆 股票提及排行榜</h2><span style="font-size:12px;color:var(--t2)">按提及帖子数降序</span></div>
+    <div class="card-bd" style="overflow-x:auto">
+        <table>
+            <thead><tr><th>#</th><th>股票</th><th>代码</th><th>提及</th><th>最后</th></tr></thead>
+            <tbody>
+        <tr>
+            <td><span class="rank r1">1</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/600909.SS" target="_blank">华安证券</a></td>
+            <td><span class="code">600909.SS</span></td>
+            <td class="cnt">51<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r2">2</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/000417.SZ" target="_blank">合百集团</a></td>
+            <td><span class="code">000417.SZ</span></td>
+            <td class="cnt">48<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r3">3</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/688268.SS" target="_blank">华特气体</a></td>
+            <td><span class="code">688268.SS</span></td>
+            <td class="cnt">43<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">4</span></td>
+            <td><a class="sname" href="#" target="_blank">长鑫存储</a></td>
+            <td><span class="code na">—</span></td>
+            <td class="cnt">35<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">5</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/600703.SS" target="_blank">三安光电</a></td>
+            <td><span class="code">600703.SS</span></td>
+            <td class="cnt">31<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">6</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/002971.SZ" target="_blank">和远气体</a></td>
+            <td><span class="code">002971.SZ</span></td>
+            <td class="cnt">31<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">7</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/000657.SZ" target="_blank">中钨高新</a></td>
+            <td><span class="code">000657.SZ</span></td>
+            <td class="cnt">29<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">8</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/688146.SS" target="_blank">中船特气</a></td>
+            <td><span class="code">688146.SS</span></td>
+            <td class="cnt">26<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">9</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/603986.SS" target="_blank">兆易创新</a></td>
+            <td><span class="code">603986.SS</span></td>
+            <td class="cnt">25<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">10</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/600206.SS" target="_blank">有研新材</a></td>
+            <td><span class="code">600206.SS</span></td>
+            <td class="cnt">25<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">11</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/603318.SS" target="_blank">水发燃气</a></td>
+            <td><span class="code">603318.SS</span></td>
+            <td class="cnt">24<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">12</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/002428.SZ" target="_blank">云南锗业</a></td>
+            <td><span class="code">002428.SZ</span></td>
+            <td class="cnt">23<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">13</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/600141.SS" target="_blank">兴发集团</a></td>
+            <td><span class="code">600141.SS</span></td>
+            <td class="cnt">19<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">14</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/600378.SS" target="_blank">昊华科技</a></td>
+            <td><span class="code">600378.SS</span></td>
+            <td class="cnt">19<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">15</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/003031.SZ" target="_blank">中瓷电子</a></td>
+            <td><span class="code">003031.SZ</span></td>
+            <td class="cnt">18<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">16</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/600999.SS" target="_blank">招商证券</a></td>
+            <td><span class="code">600999.SS</span></td>
+            <td class="cnt">18<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">17</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/688400.SS" target="_blank">凌云光</a></td>
+            <td><span class="code">688400.SS</span></td>
+            <td class="cnt">17<span class="unit">帖</span></td>
+            <td class="last">2026-06-22</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">18</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/688313.SS" target="_blank">仕佳光子</a></td>
+            <td><span class="code">688313.SS</span></td>
+            <td class="cnt">16<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">19</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/300666.SZ" target="_blank">江丰电子</a></td>
+            <td><span class="code">300666.SZ</span></td>
+            <td class="cnt">16<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">20</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/301217.SZ" target="_blank">铜冠铜箔</a></td>
+            <td><span class="code">301217.SZ</span></td>
+            <td class="cnt">15<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">21</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/600460.SS" target="_blank">士兰微</a></td>
+            <td><span class="code">600460.SS</span></td>
+            <td class="cnt">14<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">22</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/688549.SS" target="_blank">中巨芯</a></td>
+            <td><span class="code">688549.SS</span></td>
+            <td class="cnt">13<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">23</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/688545.SS" target="_blank">兴福电子</a></td>
+            <td><span class="code">688545.SS</span></td>
+            <td class="cnt">13<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">24</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/603186.SS" target="_blank">华正新材</a></td>
+            <td><span class="code">603186.SS</span></td>
+            <td class="cnt">13<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">25</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/002208.SZ" target="_blank">合肥城建</a></td>
+            <td><span class="code">002208.SZ</span></td>
+            <td class="cnt">13<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">26</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/600078.SS" target="_blank">澄星股份</a></td>
+            <td><span class="code">600078.SS</span></td>
+            <td class="cnt">13<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">27</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/002384.SZ" target="_blank">东山精密</a></td>
+            <td><span class="code">002384.SZ</span></td>
+            <td class="cnt">12<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">28</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/002436.SS" target="_blank">兴森科技</a></td>
+            <td><span class="code">002436.SS</span></td>
+            <td class="cnt">12<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">29</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/300285.SZ" target="_blank">国瓷材料</a></td>
+            <td><span class="code">300285.SZ</span></td>
+            <td class="cnt">12<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">30</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/600172.SS" target="_blank">黄河旋风</a></td>
+            <td><span class="code">600172.SS</span></td>
+            <td class="cnt">12<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">31</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/300054.SZ" target="_blank">鼎龙股份</a></td>
+            <td><span class="code">300054.SZ</span></td>
+            <td class="cnt">12<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">32</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/002167.SZ" target="_blank">东方锆业</a></td>
+            <td><span class="code">002167.SZ</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">33</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/300223.SZ" target="_blank">北京君正</a></td>
+            <td><span class="code">300223.SZ</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">34</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/688234.SS" target="_blank">天岳先进</a></td>
+            <td><span class="code">688234.SS</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">35</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/300570.SZ" target="_blank">太辰光</a></td>
+            <td><span class="code">300570.SZ</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">36</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/301297.SZ" target="_blank">富乐德</a></td>
+            <td><span class="code">301297.SZ</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">37</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/1888.HK" target="_blank">建滔积层板</a></td>
+            <td><span class="code">1888.HK</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">38</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/0148.HK" target="_blank">建滔集团</a></td>
+            <td><span class="code">0148.HK</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">39</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/301511.SZ" target="_blank">德福科技</a></td>
+            <td><span class="code">301511.SZ</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">40</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/301486.SZ" target="_blank">致尚科技</a></td>
+            <td><span class="code">301486.SZ</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">41</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/688348.SS" target="_blank">蘅东光</a></td>
+            <td><span class="code">688348.SS</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">42</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/688106.SS" target="_blank">金宏气体</a></td>
+            <td><span class="code">688106.SS</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">43</span></td>
+            <td><a class="sname" href="#" target="_blank">长芯博创</a></td>
+            <td><span class="code na">—</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">44</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/000636.SZ" target="_blank">风华高科</a></td>
+            <td><span class="code">000636.SZ</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">45</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/301377.SZ" target="_blank">鼎泰高科</a></td>
+            <td><span class="code">301377.SZ</span></td>
+            <td class="cnt">11<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">46</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/002281.SZ" target="_blank">光迅科技</a></td>
+            <td><span class="code">002281.SZ</span></td>
+            <td class="cnt">10<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">47</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/301071.SZ" target="_blank">力量钻石</a></td>
+            <td><span class="code">301071.SZ</span></td>
+            <td class="cnt">10<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">48</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/301251.SZ" target="_blank">天承科技</a></td>
+            <td><span class="code">301251.SZ</span></td>
+            <td class="cnt">10<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">49</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/002552.SZ" target="_blank">宝鼎科技</a></td>
+            <td><span class="code">002552.SZ</span></td>
+            <td class="cnt">10<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr>
+        <tr>
+            <td><span class="rank r">50</span></td>
+            <td><a class="sname" href="https://finance.yahoo.com/quote/301217.SZ" target="_blank">江南新材</a></td>
+            <td><span class="code">301217.SZ</span></td>
+            <td class="cnt">10<span class="unit">帖</span></td>
+            <td class="last">2026-06-24</td>
+        </tr></tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-hd"><h2>📝 最新帖子</h2><a href="https://x.com/agudianjinshou" target="_blank" style="font-size:12px;color:var(--red);text-decoration:none;">在X查看 →</a></div>
+    <div class="card-bd">
+        <a class="post-item" href="https://x.com/agudianjinshou/status/2069941637145588092" target="_blank">
+            <span class="post-date">2026-06-25T00:31</span>
+            <span class="post-title">简单的总结吧，不过今天可能整个半导体大部分都嗨起来吧，只需要稍微注意下兑现得问题，毕竟好多人最近都刚经历了一波</span>
+            <span class="post-meta">👁 3,829 · 💬 10</span>
+        </a>
+        <a class="post-item" href="https://x.com/agudianjinshou/status/2069937602892042359" target="_blank">
+            <span class="post-date">2026-06-25T00:15</span>
+            <span class="post-title">还是那句话，别人利好是真利好，我们利好还是注意着点吧，知道哪个方向了吧</span>
+            <span class="post-meta">👁 6,521 · 💬 2</span>
+        </a>
+        <a class="post-item" href="https://x.com/agudianjinshou/status/2069908881422393352" target="_blank">
+            <span class="post-date">2026-06-24T22:21</span>
+            <span class="post-title">今天a股最值得买的股票</span>
+            <span class="post-meta">👁 6,790 · 💬 11</span>
+        </a>
+        <a class="post-item" href="https://x.com/agudianjinshou/status/2069791149947326496" target="_blank">
+            <span class="post-date">2026-06-24T14:33</span>
+            <span class="post-title">之前回复了好多人，太多了可能导致限流，不知道回复内容看的到不</span>
+            <span class="post-meta">👁 5,340 · 💬 11</span>
+        </a>
+        <a class="post-item" href="https://x.com/agudianjinshou/status/2069743331161354520" target="_blank">
+            <span class="post-date">2026-06-24T11:23</span>
+            <span class="post-title">之前点赞多了，还是回复多了，暂时限流了</span>
+            <span class="post-meta">👁 8,845 · 💬 12</span>
+        </a>
+        <a class="post-item" href="https://x.com/agudianjinshou/status/2069729985276051521" target="_blank">
+            <span class="post-date">2026-06-24T10:30</span>
+            <span class="post-title">正好也是我的一个重要经验：因为我有足够的确定性，我看懂了逻辑，不过这些都不重要，最重要是运气，其次是入场时机和拿的住</span>
+            <span class="post-meta">👁 8,360 · 💬 7</span>
+        </a></div>
+</div>
+
+<div class="footer">
+    <p>数据来源: <a href="https://x.com/agudianjinshou" target="_blank">@agudianjinshou on X</a></p>
+    <p class="update">🔄 更新于 2026-06-25 11:49（CST） · 每5小时自动刷新</p>
+</div>
+</div>
+</body>
+</html>
